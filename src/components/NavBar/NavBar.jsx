@@ -1,34 +1,27 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import classes from "./NavBar.module.css";
+import React from 'react';
+import s from './Navbar.module.css';
+import {NavLink} from "react-router-dom";
 
+const Navbar = () => {
+    return (
+        <nav className={s.nav}>
+            <div className={s.item}>
+                <NavLink to="/profile" activeClassName={s.activeLink}>Profile</NavLink>
+            </div>
+            <div className={`${s.item} ${s.active}`}>
+                <NavLink to="/dialogs" activeClassName={s.activeLink}>Messages</NavLink>
+            </div>
+            <div className={s.item}>
+                <a>News</a>
+            </div>
+            <div className={s.item}>
+                <a>Music</a>
+            </div>
+            <div className={s.item}>
+                <a>Settings</a>
+            </div>
+        </nav>
+    )
+}
 
-const NavBar = () => {
-  return (
-    <nav className={classes.nav}>
-      <div className={`${classes.item}`}>
-        <NavLink to ="/profile" activeClassName={classes.activeLinK}>Profile</NavLink>
-      </div>
-      <div className={classes.item}>
-        <NavLink to="dialogs" activeClassName={classes.activeLinK}>Massages</NavLink>
-      </div>
-      <div className={classes.item}>
-        <NavLink to="news" activeClassName={classes.activeLinK}>News</NavLink>
-      </div>
-      <div className={classes.item}>
-        <NavLink to="music" activeClassName={classes.activeLinK}>Music</NavLink>
-      </div>
-      <div className={classes.item}>
-        <NavLink to="setings" activeClassName={classes.activeLinK}>Setings</NavLink>
-      </div>
-      {/* <div className={classes.item+ ' ' +classes.item_friends}>
-        <NavLink to="setings" activeClassName={classes.activeLinK}>Friends</NavLink>
-        <div className= {classes.friend}>1</div>
-        <div className= {classes.friend}>2</div>
-        <div className= {classes.friend}>3</div> */}
-      {/* </div> */}
-    </nav>
-  );
-};
-
-export default NavBar;
+export default Navbar;
