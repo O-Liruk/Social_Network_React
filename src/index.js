@@ -1,5 +1,5 @@
 import * as serviceWorker from './serviceWorker';
-import store from "./redux/redux_store";
+import store from "./redux/redux-store";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
