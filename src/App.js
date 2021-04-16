@@ -17,19 +17,19 @@ const App = (props) => {
                 <Navbar />
                 <div className='app-wrapper-content'>
                 <Route path='/dialogs'
-                           render={ () => <DialogsContainer store={props.store} /> }/>
+                           render={ () => <DialogsContainer /> }/>
 
                     <Route path='/profile'
-                           render={ () => <Profile store={props.store} /> }/>
+                           render={ () => <Profile  /> }/>
                     
                     <Route path='/news'
-                           render={ () => <News store={props.store} /> }/>
+                           render={ () => <News  /> }/>
 
                     <Route path='/music'
-                           render={ () => <Music store={props.store} /> }/>
+                           render={ () => <Music  /> }/>
 
                     <Route path='/settings'
-                           render={ () => <Settings store={props.store} /> }/>
+                           render={ () => <Settings /> }/>
 
                    
 
