@@ -1,19 +1,27 @@
+import * as axios from "axios";
 import React from "react";
 import s from "./users.module.css";
+import userPhoto from "../../assets/image/icon-5359553_1280.png";
 
 let Users = (props) => {
+  if (props.users.length === 0) {
+    axios
+      .get("https://60809440a5be5d00176ddd61.mockapi.io/api/1/users")
+      .then((response) => {
+        props.setUsers(response.data);
+      });
+  }
 
-    if (props.users.length === 0){
-         props.setUsers();
-    }
-  
   return (
     <div>
       {props.users.map((u) => (
         <div key={u.id}>
           <span>
             <div>
-              <img src={u.photoUrl} className={s.userPhoto} />
+              <img
+                src={u.photoUrl != null ? u.photoUrl : userPhoto}
+                className={s.userPhoto}
+              />
             </div>
             <div>
               {u.followed ? (
@@ -41,8 +49,8 @@ let Users = (props) => {
               <div>{u.status}</div>
             </span>
             <span>
-              <div>{u.location.country}</div>
-              <div>{u.location.city}</div>
+              <div>{"u.location.country"}</div>
+              <div>{"u.location.city"}</div>
             </span>
           </span>
         </div>
