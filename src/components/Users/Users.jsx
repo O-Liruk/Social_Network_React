@@ -4,16 +4,14 @@ import s from "./users.module.css";
 import userPhoto from "../../assets/image/icon-5359553_1280.png";
 
 class Users extends React.Component {
-  constructor(props){
-    super(props);
-       alert("new")
-      axios
+
+  componentDidMount(){
+    axios
         .get("https://60809440a5be5d00176ddd61.mockapi.io/api/1/users")
         .then((response) => {
           this.props.setUsers(response.data);
         });
-    
-  };
+  }
   
   render() {
     return (
