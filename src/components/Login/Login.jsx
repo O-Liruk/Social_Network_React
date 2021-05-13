@@ -5,6 +5,7 @@ import {requaired} from "../../utils/validators/validators.js";
 import {connect} from "react-redux";
 import {login} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
+import stayle from "../common/FormsControls/FormsControl.module.css"
 
 const LoginForm = (props) => {
     return (
@@ -22,6 +23,8 @@ const LoginForm = (props) => {
             <div>
                 <Field component={Input} name={"rememberMe"} type={"checkbox"}/> remember me
             </div>
+            {props.error && <div className={stayle.formSummaryError}>
+              {props.error}</div>}
             <div>
                 <button>Login</button>
             </div>
