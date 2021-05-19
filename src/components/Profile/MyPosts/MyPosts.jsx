@@ -7,7 +7,8 @@ import Post from "./Post/Post";
 
 let maxLength10 = maxLengthCreator(10);
 
-const MyPosts = (props) => {
+const MyPosts = React.memo(props => {
+  console.log("render");
   let postsElements = props.posts.map((p) => (
     <Post message={p.message} likesCount={p.likesCount} />
   ));
@@ -25,7 +26,7 @@ const MyPosts = (props) => {
       <div className={s.posts}>{postsElements}</div>
     </div>
   );
-};
+});
 
 function AddNewPostForm(props) {
   return (
